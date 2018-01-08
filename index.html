@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+<h5>您的账户余额是<span id="amount">&&&amount&&&&</span></h5>
+<button id="button">打钱</button>
+<script>
+    button.addEventListener('click',(e) => {
+        $.ajax({
+            url: "http://jack.com:8002/pay",
+            dataType: "jsonp",
+            success: function( response ) {
+                if(response === 'success'){
+                    amount.innerText = amount.innerText - 1
+                }
+            }
+        })
+
+        $.jsonp();
+    })
+</script>
+</body>
+</html>
